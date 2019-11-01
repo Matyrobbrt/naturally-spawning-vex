@@ -1,0 +1,10 @@
+{
+  "homepage": "https://www.curseforge.com/minecraft/mc-mods/naturally-spawning-vex",
+  "promos": {
+    "1.14.4-latest": "1.0.0.1",
+    "1.14.4-recommended": "1.0.0.1"
+  },
+  "1.14.4": {
+    "1.0.0.1": "https://raw.githubusercontent.com/MinecraftModDevelopmentMods/naturally-spawning-vex/master/CHANGELOG.txt"
+  }
+}

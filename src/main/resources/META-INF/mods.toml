@@ -1,0 +1,29 @@
+modLoader="javafml"
+loaderVersion="[28,)"
+updateJSONURL="https://raw.githubusercontent.com/MinecraftModDevelopmentMods/naturally-spawning-vex/master/update.json"
+issueTrackerURL="https://github.com/MinecraftModDevelopmentMods/naturally-spawning-vex/issues"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/naturally-spawning-vex"
+#logoFile=""
+credits="ProxyNeko"
+authors="ProxyNeko"
+
+[[mods]]
+modId="naturallyspawningvex"
+version="${file.jarVersion}"
+displayName="Naturally Spawning Vex"
+description='''
+Let Vex spawn in any biome. Fly my pretties find your foe and slay them!
+'''
+
+[[dependencies.naturallyspawningvex]]
+   modId="forge"
+   mandatory=true
+   versionRange="[28,)"
+   ordering="NONE"
+   side="BOTH"
+[[dependencies.naturallyspawningvex]]
+   modId="minecraft"
+   mandatory=true
+   versionRange="[1.14.4]"
+   ordering="NONE"
+   side="BOTH"
