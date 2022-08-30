@@ -20,19 +20,24 @@
  */
 package com.mcmoddev.naturallyspawningvex;
 
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.MobSpawnInfo;
+import net.minecraftforge.event.world.BiomeLoadingEvent;
 
-@Mod(value = "naturallyspawningvex")
-public class NaturallySpawningVex {
+class VexSpawnHandler {
 
-    public NaturallySpawningVex() {
-        ModLoadingContext modLoadingContext = ModLoadingContext.get();
-        IEventBus forge = MinecraftForge.EVENT_BUS;
-        modLoadingContext.registerConfig(ModConfig.Type.SERVER, VexConfig.SERVER_SPEC);
-        forge.addListener(VexSpawnHandler::onLoad);
+    static void onLoad(BiomeLoadingEvent event) {
+        if (event.getName() != null) {
+            if (event.getCategory() != Biome.Category.NETHER
+                && event.getCategory() != Biome.Category.THEEND) {
+                event.getSpawns().getSpawner(EntityClassification.MONSTER)
+                    .add(new MobSpawnInfo.Spawners(EntityType.VEX,
+                    VexConfig.CONFIG.vexSpawnWeight.get(),
+                    VexConfig.CONFIG.vexMinGroupCount.get(),
+                    VexConfig.CONFIG.vexMaxGroupCount.get()));
+            }
+        }
     }
 }
