@@ -20,20 +20,20 @@
  */
 package com.mcmoddev.naturallyspawningvex;
 
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.entity.EntityType;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.MobSpawnInfo;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 
 class VexSpawnHandler {
 
     static void onLoad(BiomeLoadingEvent event) {
         if (event.getName() != null) {
-            if (event.getCategory() != Biome.Category.NETHER
-                && event.getCategory() != Biome.Category.THEEND) {
-                event.getSpawns().getSpawner(EntityClassification.MONSTER)
-                    .add(new MobSpawnInfo.Spawners(EntityType.VEX,
+            if (event.getCategory() != Biome.BiomeCategory.NETHER
+                && event.getCategory() != Biome.BiomeCategory.THEEND) {
+                event.getSpawns().getSpawner(MobCategory.MONSTER)
+                    .add(new MobSpawnSettings.SpawnerData(EntityType.VEX,
                     VexConfig.CONFIG.vexSpawnWeight.get(),
                     VexConfig.CONFIG.vexMinGroupCount.get(),
                     VexConfig.CONFIG.vexMaxGroupCount.get()));
