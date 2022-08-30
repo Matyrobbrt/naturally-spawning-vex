@@ -20,19 +20,16 @@
  */
 package dev.tophatcat.naturallyspawningvex;
 
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Mod(value = "naturallyspawningvex")
 public class NaturallySpawningVex {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger("Naturally Spawning Vex");
+
     public NaturallySpawningVex() {
-        ModLoadingContext modLoadingContext = ModLoadingContext.get();
-        IEventBus forge = MinecraftForge.EVENT_BUS;
-        modLoadingContext.registerConfig(ModConfig.Type.SERVER, VexConfig.SERVER_SPEC);
-        forge.addListener(VexSpawnHandler::onLoad);
+        LOGGER.info("Mod is loaded and ready!");
     }
 }

@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#is_overworld",
+  "spawners": [
+    {
+      "type": "minecraft:vex",
+      "weight": 25,
+      "minCount": 2,
+      "maxCount": 5
+    }
+  ]
+}
