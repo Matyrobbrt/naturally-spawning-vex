@@ -1,6 +1,6 @@
 /*
  * Naturally Spawning Vex - https://github.com/tophatcats-mods/naturally-spawning-vex
- * Copyright (C) 2016-2022 <KiriCattus>
+ * Copyright (C) 2016-2023 <KiriCattus>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
